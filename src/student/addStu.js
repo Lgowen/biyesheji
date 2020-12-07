@@ -1,0 +1,24 @@
+import { reactive } from "vue"
+
+function addStudent(state){
+    let state2 = reactive({
+      stu:{
+        id:'',
+        name:'',
+        age:''
+      }
+    })
+  
+    function addStu(e){
+      e.preventDefault()
+      const stu = Object.assign({}, state2.stu)
+      state.student.push(stu)
+      state2.stu.id = ''
+      state2.stu.name = ''
+      state2.stu.age = ''
+    }
+  
+    return {state2, addStu}
+  }
+
+export default addStudent
