@@ -64,7 +64,7 @@ export default {
         {
           name: " Github",
           icon: "iconfont icon-GitHub",
-          path: "https://github.com/Acmenlei",
+          path: "https://github.com/Lgowen",
         },
       ],
     };

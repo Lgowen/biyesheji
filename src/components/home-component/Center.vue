@@ -35,10 +35,8 @@
       </i>
     </div>
     <div class="talk-method">
-      <i class="iconfont icon-weixin"> : x972761675</i>
-      <i class="iconfont icon-qq">
-        : 972761675 || <i class="iconfont icon-qq"> 前端群</i>: 700785102</i
-      >
+      <i class="iconfont icon-weixin"> : wenshao_eason</i>
+      <i class="iconfont icon-qq"> : 434666361</i>
     </div>
   </div>
 </template>

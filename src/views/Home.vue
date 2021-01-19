@@ -12,7 +12,7 @@ import Center from "../components/home-component/Center.vue";
 import { reactive } from "vue";
 export default {
   name: "home",
-  comments: {
+  components: {
     Center,
   },
   setup() {
