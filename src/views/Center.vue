@@ -44,34 +44,34 @@
 </template>
 <script>
 export default {
-  name: "center",
+  name: 'center',
   data() {
     return {
       navgation: [
-        { name: " Login", icon: "iconfont icon-touxiang", path: "/login" },
+        { name: ' Login', icon: 'iconfont icon-touxiang', path: '/login' },
         {
-          name: " Article-List",
-          icon: "iconfont icon-wenzhang",
-          path: "/article",
+          name: ' Article-List',
+          icon: 'iconfont icon-wenzhang',
+          path: '/article',
         },
-        { name: " Demo", icon: "iconfont icon-anli", path: "/demo" },
+        { name: ' Demo', icon: 'iconfont icon-anli', path: '/demo' },
         {
-          name: " LeaveMessage",
-          icon: "iconfont icon-liuyan2",
-          path: "/message",
+          name: ' LeaveMessage',
+          icon: 'iconfont icon-liuyan2',
+          path: '/message',
         },
-        { name: " Photos", icon: "iconfont icon-xiangce", path: "/photos" },
+        { name: ' Photos', icon: 'iconfont icon-xiangce', path: '/photos' },
         {
-          name: " Github",
-          icon: "iconfont icon-GitHub",
-          path: "https://github.com/Lgowen",
+          name: ' Github',
+          icon: 'iconfont icon-GitHub',
+          path: 'https://github.com/Lgowen',
         },
       ],
     };
   },
   methods: {
     triggerPage(path) {
-      if (path === "https://github.com/Acmenlei") {
+      if (path === 'https://github.com/Acmenlei') {
         window.open(path);
       } else {
         this.$router.push(path);
@@ -81,7 +81,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import url("../components/home-component/lizi/trigger.css");
+@import url('../components/home-component/particle/particle.css');
 #center {
   display: flex;
   justify-content: center;
@@ -133,7 +133,7 @@ export default {
       background: #ffda72;
     }
     .status:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: -5px;
