@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import algorithm from "../markdown/algorithm.md"
+import array from "../markdown/array.md"
+import day from "../markdown/day.md"
 // 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）
 import { h } from 'vue';
 import Markdown from '../components/MarkDown.vue'
@@ -20,8 +22,14 @@ const routes = [
     component: () => import('../views/Home.vue'), // 路由懒加载
   },
   {
-    path: '/algorithm',
-    component: md(algorithm)
+    path: "/doc",
+    component: () => import('../components/Doc.vue'),
+    children: [
+      { path: "", redirect: "/doc/algorithm" },
+      { path: "algorithm", component: () => md(algorithm) },
+      { path: "array", component: () => md(array) },
+      { path: "day", component: () => md(day) },
+    ],
   },
 ];
 

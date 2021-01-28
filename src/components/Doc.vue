@@ -1,14 +1,10 @@
 <template>
-    <markdown path="../markdown/algorithm.md" />
+    <router-view></router-view>
 </template>
 
 <script>
-import markdown from "../components/MarkDown";
 export default {
   name: "doc",
-  components: {
-    markdown,
-  },
 }
 </script>
 
