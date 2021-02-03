@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
+import { ElButton } from 'element-plus'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/css/reset.css';
+import 'element-plus/lib/theme-chalk/index.css'
+import './assets/css/reset.css'
 import './assets/iconfont/iconfont.css'
 import './assets/iconfont2/iconfont.css'
 import './assets/iconfont3/iconfont.css'
@@ -10,6 +12,7 @@ import './assets/iconfont4/iconfont.css'
 import './assets/iconfont5/iconfont.css'
 
 const app = createApp(App)
+app.component(ElButton.name, ElButton)
 
 // 分环境处理
 if (process.env.NODE_ENV === 'development') {

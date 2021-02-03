@@ -14,18 +14,12 @@ const md = (string) =>
 const routes = [
   {
     path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    name: 'home',
     component: () => import('../views/Home.vue'), // 路由懒加载
   },
   {
     path: "/doc",
-    component: () => import('../components/Doc.vue'),
+    component: () => import('../components/article.vue'),
     children: [
-      { path: "", redirect: "/doc/algorithm" },
       { path: "algorithm", component: () => md(algorithm) },
       { path: "array", component: () => md(array) },
       { path: "day", component: () => md(day) },

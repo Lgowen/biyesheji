@@ -1,85 +1,92 @@
 <template>
-  <div id="center">
-    <div class="wrapper">
-      <div class="slash"></div>
-      <div class="sides">
-        <div class="side"></div>
-        <div class="side"></div>
-        <div class="side"></div>
-        <div class="side"></div>
+  <div id='center'>
+    <div class='wrapper'>
+      <div class='slash'></div>
+      <div class='sides'>
+        <div class='side'></div>
+        <div class='side'></div>
+        <div class='side'></div>
+        <div class='side'></div>
       </div>
-      <div class="text">
-        <div class="text--backing">CODELEI</div>
-        <div class="text--left">
-          <div class="inner">CODELEI</div>
+      <div class='text'>
+        <div class='text--backing'>CODELEI</div>
+        <div class='text--left'>
+          <div class='inner'>CODELEI</div>
         </div>
-        <div class="text--right">
-          <div class="inner">CODELEI</div>
+        <div class='text--right'>
+          <div class='inner'>CODELEI</div>
         </div>
       </div>
     </div>
-    <div class="loading">
-      <span class="status online"></span>
-      <span class="status invisible"></span>
-      <span class="status idle"></span>
-      <span class="status offline"></span>
+    <div class='loading'>
+      <span class='status online'></span>
+      <span class='status invisible'></span>
+      <span class='status idle'></span>
+      <span class='status offline'></span>
     </div>
-    <div class="navgation">
+    <div class='navgation'>
       <i
-        v-for="(item, index) in navgation"
-        @click="triggerPage(item.path)"
-        :key="index"
-        :class="item.icon"
+        v-for='(item, index) in navgation'
+        @click='triggerPage(item.path)'
+        :key='index'
+        :class='item.icon'
       >
         {{ item.name }}
       </i>
     </div>
-    <div class="talk-method">
-      <i class="iconfont icon-weixin"> : wenshao_eason</i>
-      <i class="iconfont icon-qq"> : 434666361</i>
+    <div class='talk-method'>
+      <i class='iconfont icon-weixin'> : wenshao_eason</i>
+      <i class='iconfont icon-qq'> : 434666361</i>
     </div>
   </div>
 </template>
 <script>
+import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
-  name: "center",
-  data() {
-    return {
-      navgation: [
-        { name: " Login", icon: "iconfont icon-touxiang", path: "/login" },
+  name: 'center',
+  setup() {
+      const router = useRouter()
+      const navgation = reactive([
+         { name: 'Login', icon: 'iconfont icon-touxiang', path: '/login'},
         {
-          name: " Article-List",
-          icon: "iconfont icon-wenzhang",
-          path: "/article",
+          name: 'Article-List',
+          icon: 'iconfont icon-wenzhang',
+          path: '/article',
         },
-        { name: " Demo", icon: "iconfont icon-anli", path: "/demo" },
+        { name: 'Demo', icon: 'iconfont icon-anli', path: '/demo'},
         {
-          name: " LeaveMessage",
-          icon: "iconfont icon-liuyan2",
-          path: "/message",
+          name: 'LeaveMessage',
+          icon: 'iconfont icon-liuyan2',
+          path: '/message',
         },
-        { name: " Photos", icon: "iconfont icon-xiangce", path: "/photos" },
+        { name: 'Photos', icon: 'iconfont icon-xiangce', path: '/photos'},
         {
-          name: " Github",
-          icon: "iconfont icon-GitHub",
-          path: "https://github.com/Acmenlei",
+          name: 'Github',
+          icon: 'iconfont icon-GitHub',
+          path: 'https://github.com/Lgowen',
         },
-      ],
-    };
+      ])
+      
+      const triggerPage = path => {
+        path === 'https://github.com/Lgowen' ? window.open(path) : router.push(path)
+      }
+
+      return { navgation, triggerPage }
   },
   methods: {
-    triggerPage(path) {
-      if (path === "https://github.com/Acmenlei") {
-        window.open(path);
-      } else {
-        this.$router.push(path);
-      }
-    },
+    // triggerPage(path) {
+    //   if (path === 'https://github.com/Acmenlei') {
+    //     window.open(path);
+    //   } else {
+    //     this.$router.push(path);
+    //   }
+    // },
   },
 };
 </script>
-<style lang="scss" scoped>
-@import url("./particle/particle.css");
+<style lang='scss' scoped>
+@import url('./particle/particle.css');
 #center {
   display: flex;
   justify-content: center;
@@ -131,7 +138,7 @@ export default {
       background: #ffda72;
     }
     .status:before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       left: -5px;
