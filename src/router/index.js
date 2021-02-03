@@ -14,10 +14,14 @@ const md = (string) =>
 const routes = [
   {
     path: '/',
-    component: () => import('../views/Home.vue'), // 路由懒加载
+    component: () => import('../views/index.vue'), // 路由懒加载
   },
   {
-    path: "/doc",
+    path: "/homepage",
+    component: () => import('../views/homepage.vue')
+  },
+  {
+    path: "/article",
     component: () => import('../components/article.vue'),
     children: [
       { path: "algorithm", component: () => md(algorithm) },

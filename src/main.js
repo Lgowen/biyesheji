@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { ElButton } from 'element-plus'
+import { ElButton, ElRow, ElCol, ElMenu, ElMenuItem } from 'element-plus'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -12,7 +12,7 @@ import './assets/iconfont4/iconfont.css'
 import './assets/iconfont5/iconfont.css'
 
 const app = createApp(App)
-app.component(ElButton.name, ElButton)
+app.use(ElButton).use(ElRow).use(ElCol).use(ElMenu).use(ElMenuItem)
 
 // 分环境处理
 if (process.env.NODE_ENV === 'development') {

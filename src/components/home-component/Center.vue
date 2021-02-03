@@ -26,9 +26,9 @@
     </div>
     <div class='navgation'>
       <i
-        v-for='(item, index) in navgation'
+        v-for='item in navgation'
         @click='triggerPage(item.path)'
-        :key='index'
+        :key='item.name'
         :class='item.icon'
       >
         {{ item.name }}
@@ -41,18 +41,21 @@
   </div>
 </template>
 <script>
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, reactive, onMounted, onUnmounted, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { useStore } from 'vuex'
+import { loadFn, destroyFn } from '../../utils/utils'
 export default {
   name: 'center',
   setup() {
       const router = useRouter()
+      const store = useStore()
       const navgation = reactive([
          { name: 'Login', icon: 'iconfont icon-touxiang', path: '/login'},
         {
           name: 'Article-List',
           icon: 'iconfont icon-wenzhang',
-          path: '/article',
+          path: '/homepage',
         },
         { name: 'Demo', icon: 'iconfont icon-anli', path: '/demo'},
         {
@@ -67,23 +70,14 @@ export default {
           path: 'https://github.com/Lgowen',
         },
       ])
-      
+
       const triggerPage = path => {
         path === 'https://github.com/Lgowen' ? window.open(path) : router.push(path)
       }
 
       return { navgation, triggerPage }
-  },
-  methods: {
-    // triggerPage(path) {
-    //   if (path === 'https://github.com/Acmenlei') {
-    //     window.open(path);
-    //   } else {
-    //     this.$router.push(path);
-    //   }
-    // },
-  },
-};
+  }
+}
 </script>
 <style lang='scss' scoped>
 @import url('./particle/particle.css');
