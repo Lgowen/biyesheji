@@ -4,7 +4,7 @@
       <el-row :gutter="20">
         <el-col :span="3">
           <router-link to="/">
-            <img class="logo" src="../assets/logo/avartar.png" alt="lgowen" />
+            <img class="logo" src="../../assets/logo/avartar.png" alt="lgowen" />
           </router-link>
         </el-col>
         <el-col :span="16">
@@ -14,7 +14,6 @@
             active-text-color="#409eff"
             class="el-menu-demo"
             mode="horizontal"
-            @select="handleSelect"
           >
             <el-menuItem
               :route="item.path"
@@ -117,57 +116,20 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, watch } from "vue";
+import { useRoute } from 'vue-router'
+import { controlRoute } from './controlRoute'
 export default {
-  name: "article",
+  name: "nav",
   setup() {
-    let activeId = ref('2')
-    const navListItem = reactive([
-      {
-        id: "1",
-        path: "/",
-        name: "首页",
-      },
-      {
-        id: "2",
-        path: "/homepage",
-        name: "文章",
-      },
-      {
-        id: "3",
-        path: "/archive",
-        name: "归档",
-      },
-      {
-        id: "4",
-        path: "/project",
-        name: "项目",
-      },
-      {
-        id: "5",
-        path: "/timeline",
-        name: "历程",
-      },
-      {
-        id: "6",
-        path: "/message",
-        name: "留言",
-      },
-      {
-        id: "7",
-        path: "/about",
-        name: "关于",
-      },
-    ])
-
-    onMounted( () => console.log(activeId.value))
-
-    function handleSelect(key, keyPath) {
-      activeId.value = key
-    }
-
-
-    return { activeId, navListItem, handleSelect }
+    const ruote = useRoute()
+    const { activeId, navListItem, routeChange } = controlRoute() // 抽离Nav组件业务逻辑
+   
+    onMounted( () => routeChange(ruote))  // 保证从首页进来时展示的是当前的激活项
+    
+    watch(ruote, nowPath => routeChange(nowPath)) // 保证路由变化时能够显示当前激活项(包括浏览器的前进、后退)
+    
+    return { activeId, navListItem, routeChange }
   },
 };
 </script>

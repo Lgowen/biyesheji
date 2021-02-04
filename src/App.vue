@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
-    <Index v-if="!isHomePage"></Index>
     <Nav v-if="isHomePage"></Nav>
-  </div>
+    <router-view></router-view>
 </template>
 
 <script>
-import Nav from "./components/nav.vue";
+import Nav from "./components/nav-component/nav.vue";
 import Index from "./views/index.vue"
 import { ref, reactive, computed, watch } from "vue"
 import { useRoute, useRouter } from 'vue-router'

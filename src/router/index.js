@@ -5,11 +5,11 @@ import day from "../markdown/day.md"
 // 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）
 import { h } from 'vue';
 import Markdown from '../components/MarkDown.vue'
-const md = (string) =>
-  h(Markdown, {
-    content: string,
-    key: string,
-  });
+// const md = (string) =>
+//   h(Markdown, {
+//     content: string,
+//     key: string,
+//   })
 
 const routes = [
   {
@@ -21,8 +21,28 @@ const routes = [
     component: () => import('../views/homepage.vue')
   },
   {
+    path: "/archive",
+    component: () => import('../views/archive.vue')
+  },
+  {
+    path: "/project",
+    component: () => import('../views/project.vue')
+  },
+  {
+    path: "/timeline",
+    component: () => import('../views/timeline.vue')
+  },
+  {
+    path: "/message",
+    component: () => import('../views/message.vue')
+  },
+  {
+    path: "/about",
+    component: () => import('../views/about.vue')
+  },
+  {
     path: "/article",
-    component: () => import('../components/article.vue'),
+    component: () => import('../views/article.vue'),
     children: [
       { path: "algorithm", component: () => md(algorithm) },
       { path: "array", component: () => md(array) },

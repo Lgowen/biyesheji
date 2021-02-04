@@ -11,19 +11,12 @@
 import Center from "../components/home-component/Center.vue";
 import { reactive } from "vue";
 export default {
-  name: "home",
+  name: "index",
   components: {
     Center,
   },
   setup() {
-    let userInfo = [
-      { username: "lgowen", password: 123456 },
-      { username: "tyw", password: 123456 },
-      { username: "aaa", password: 123456 },
-    ];
-    let state = reactive(userInfo);
-    // console.log(state);
-    return { state };
+    
   },
 };
 </script>

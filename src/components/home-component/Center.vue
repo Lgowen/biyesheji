@@ -55,7 +55,7 @@ export default {
         {
           name: 'Article-List',
           icon: 'iconfont icon-wenzhang',
-          path: '/homepage',
+          path: '/article',
         },
         { name: 'Demo', icon: 'iconfont icon-anli', path: '/demo'},
         {
