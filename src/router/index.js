@@ -23,6 +23,10 @@ const routes = [
     path: '/algorithm',
     component: md(algorithm)
   },
+  {
+    path: '/article',
+    component: () => import('../views/ArticleList.vue')
+  }
 ];
 
 // Vue-router新版本中，需要使用createRouter来创建路由

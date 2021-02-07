@@ -25,27 +25,24 @@
       <span class="status offline"></span>
     </div>
     <div class="navgation">
-      <i
-        v-for="(item, index) in navgation"
-        @click="triggerPage(item.path)"
-        :key="index"
-        :class="item.icon"
-      >
+      <i v-for="(item, index) in navgation"
+         @click="triggerPage(item.path)"
+         :key="index"
+         :class="item.icon">
         {{ item.name }}
       </i>
     </div>
     <div class="talk-method">
       <i class="iconfont icon-weixin"> : x972761675</i>
       <i class="iconfont icon-qq">
-        : 972761675 || <i class="iconfont icon-qq"> 前端群</i>: 700785102</i
-      >
+        : 972761675 || <i class="iconfont icon-qq"> 前端群</i>: 700785102</i>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'center',
-  data() {
+  data () {
     return {
       navgation: [
         { name: ' Login', icon: 'iconfont icon-touxiang', path: '/login' },
@@ -70,12 +67,14 @@ export default {
     };
   },
   methods: {
-    triggerPage(path) {
+    triggerPage (path) {
       if (path === 'https://github.com/Acmenlei') {
         window.open(path);
       } else {
         this.$router.push(path);
       }
+      var a = 1;
+      console.log(a);
     },
   },
 };

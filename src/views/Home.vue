@@ -15,7 +15,7 @@ export default {
   components: {
     Center,
   },
-  setup() {
+  setup () {
     let userInfo = [
       { username: "lgowen", password: 123456 },
       { username: "tyw", password: 123456 },
@@ -47,14 +47,7 @@ export default {
     width: 100%;
     height: 100vh;
     animation: linears 15s infinite;
-    background: linear-gradient(
-      125deg,
-      #2980b9,
-      #633bd3,
-      #8e44ad,
-      #192f44,
-      #27ae60
-    );
+    background: linear-gradient(125deg, #2980b9, #633bd3, #8e44ad, #192f44, #27ae60);
     background-size: 800%;
     z-index: -99;
   }
