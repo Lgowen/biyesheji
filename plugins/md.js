@@ -10,8 +10,12 @@ const mdToJs = str => {
 export function md() {
   return {
     configureServer: [ // 用于开发
-      async ({ app }) => {
-        app.use(async (ctx, next) => {
+      async (server) => {
+        console.log(server)
+        server.app.use(async (ctx, next) => {
+          console.log(ctx.response)
+          console.log(ctx.request)
+          // console.log(ctx.path)
           if (ctx.path.endsWith('.md')) {
             ctx.type = 'js'
             const filePath = path.join(process.cwd(), ctx.path)

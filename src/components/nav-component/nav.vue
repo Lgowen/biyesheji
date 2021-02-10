@@ -120,7 +120,7 @@ import { ref, reactive, onMounted, watch } from "vue";
 import { useRoute } from 'vue-router'
 import { controlRoute } from './controlRoute'
 export default {
-  name: "nav",
+  name: "Nav",
   setup() {
     const ruote = useRoute()
     const { activeId, navListItem, routeChange } = controlRoute() // 抽离Nav组件业务逻辑

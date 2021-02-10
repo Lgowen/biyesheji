@@ -11,7 +11,7 @@
 import Center from "../components/home-component/Center.vue";
 import { reactive } from "vue";
 export default {
-  name: "index",
+  name: "Index",
   components: {
     Center,
   },

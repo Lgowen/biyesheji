@@ -1,8 +1,8 @@
 import { md } from './plugins/md'
 
-const path = require("path");
+const path = require("path")
 // vite.config.js # or vite.config.ts
-console.log(path.resolve(__dirname, "../src"));
+console.log(path.resolve(__dirname, "../src"))
 
 module.exports = {
   plugins: [
@@ -24,7 +24,7 @@ module.exports = {
   outDir: "dist",
   port: 3000,
   // 是否自动在浏览器打开
-  open: true,
+  // open: true,
   // 是否开启 https
   https: false,
   // 服务端渲染
